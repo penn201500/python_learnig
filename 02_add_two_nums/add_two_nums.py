@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import math
 
 def get_max_len(arr1,arr2):
     if len(arr1) >= len(arr2):
@@ -10,6 +11,7 @@ def get_max_len(arr1,arr2):
 
 def get_sum(arr1,arr2):
     len_arr3 = get_max_len(arr1,arr2)
+    result = 0
     arr3 = [0]*len_arr3
     print("init",arr3)
 
@@ -25,6 +27,11 @@ def get_sum(arr1,arr2):
         else:
             arr3[i] += arr1[i]+arr2[i]
     print(arr3)
+    for i in range(len(arr3)):
+       result += arr3[i]*math.pow(10,i) 
+    print("result is:",result)
+    return result
+
 
 
 if __name__ == '__main__':
